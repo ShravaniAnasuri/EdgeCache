@@ -1,0 +1,95 @@
+.navbar{
+
+    height:75px;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.navbar-title{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#1e3a8a;
+
+}
+
+.navbar-search{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:350px;
+
+    background:#f1f5f9;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+}
+
+.navbar-search input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    width:100%;
+
+}
+
+.navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.server-status{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+.nav-icon{
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.avatar{
+
+    font-size:34px;
+
+}

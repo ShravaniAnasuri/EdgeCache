@@ -1,0 +1,31 @@
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#f3f6fb;
+
+}
+
+.main-area{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.page-content{
+
+    padding:35px;
+
+    flex:1;
+
+    background:#f8fafc;
+
+}
