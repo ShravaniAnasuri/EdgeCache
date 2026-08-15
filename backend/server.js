@@ -15,7 +15,7 @@
     });
     app.use("/api/video", videoRoutes);//use the video routes for the /api/video endpoint
     // /api/video is for streaming video segments, where :video and :segment are dynamic parameters representing the video name and segment name respectively
-    const PORT = 5000; 
+    const PORT = process.env.PORT || 5000; 
     app.use("/api/upload", uploadRoutes);//api/upload is for uploading video segments to the server
     app.use("/api/storage", storageRoutes);//api/storage is for fetching storage statistics from the server
 
@@ -28,8 +28,8 @@
         });
     });
 
-    app.listen(PORT, () => { // from line 9 it is 5000
-        console.log(`Server running on http://localhost:${PORT}`);
+    app.listen(PORT, "0.0.0.0", () => { // from line 9 it is 5000
+        console.log(`Server running on port ${PORT}`);
     });
 
     // /api/health is for checking the health of the server, it returns a json object with the status, project name, version and developer name
