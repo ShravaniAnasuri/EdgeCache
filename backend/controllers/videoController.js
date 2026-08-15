@@ -27,7 +27,7 @@ exports.streamPlaylist = (req, res) => {
 
         const playlistPath = path.join(
             __dirname,
-            "../origin",
+            "../../origin",
             video,
             "playlist.m3u8"
         );
