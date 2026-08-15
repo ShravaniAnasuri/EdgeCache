@@ -1,4 +1,4 @@
-<img width="1888" height="626" alt="Screenshot 2026-08-15 180435" src="https://github.com/user-attachments/assets/d4447ef9-ecc8-47a6-933c-43ba7ad6c24b" />## Tech Stack
+#### Tech Stack
 
 ### Frontend
 - React.js
