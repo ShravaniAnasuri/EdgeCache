@@ -22,3 +22,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Runtime video storage
+origin/*
+!origin/.gitkeep
+
+cache/*
+!cache/.gitkeep
+
+# Node
+node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# Build output
+frontend/dist/
+frontend/build/
