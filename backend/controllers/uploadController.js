@@ -10,7 +10,7 @@ exports.uploadVideo = async (req, res) => {
 
         const videoName = path.parse(uploadedFile.originalname).name;
 
-        const videoFolder = path.join(__dirname, "../../origin", videoName);
+        const videoFolder = path.join(__dirname, "../origin", videoName);
 
         // Create folder if it doesn't exist
         if (!fs.existsSync(videoFolder)) {
@@ -46,7 +46,7 @@ exports.uploadVideo = async (req, res) => {
 
 exports.getVideos = (req, res) => {
 
-    const originPath = path.join(__dirname, "../../origin");
+    const originPath = path.join(__dirname, "../origin");
 
     try {
 

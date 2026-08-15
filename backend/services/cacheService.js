@@ -10,9 +10,9 @@ const {
 
 function getSegment(video, segment) {
 
-    const cacheFolder = path.join(__dirname, "../../cache", video);
+    const cacheFolder = path.join(__dirname, "../cache", video);
 
-    const originFolder = path.join(__dirname, "../../origin", video);
+    const originFolder = path.join(__dirname, "../origin", video);
 
     const cacheFile = path.join(cacheFolder, segment);
 

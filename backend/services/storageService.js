@@ -103,9 +103,9 @@ function countSegments(cacheFolder) {
 
 function getStorageStats() {
 
-    const originFolder = path.join(__dirname, "../../origin");
+    const originFolder = path.join(__dirname, "../origin");
 
-    const cacheFolder = path.join(__dirname, "../../cache");
+    const cacheFolder = path.join(__dirname, "../cache");
 
     const originSize = folderSize(originFolder);
 
