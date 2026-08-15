@@ -1,4 +1,4 @@
-## Tech Stack
+<img width="1888" height="626" alt="Screenshot 2026-08-15 180435" src="https://github.com/user-attachments/assets/d4447ef9-ecc8-47a6-933c-43ba7ad6c24b" />## Tech Stack
 
 ### Frontend
 - React.js
@@ -24,13 +24,23 @@
 - Git
 - GitHub
 
-<img width="1891" height="867" alt="image" src="D:\OneDrive\Documents\GitHub\main projects\edgecache\images\Screenshot 2026-08-15 180400.png" />
+### The Upload Section 
+<img width="1416" height="860" alt="Screenshot 2026-08-15 180400" src="https://github.com/user-attachments/assets/09f5b642-f70c-4f9a-80f6-62306c3aa03f" />
 
-<img width="1897" height="867" alt="image" src="D:\OneDrive\Documents\GitHub\main projects\edgecache\images\Screenshot 2026-08-15 180435.png" />
-
-<img width="1895" height="785" alt="image" src="https://github.com/user-attachments/assets/5f090dfb-3bff-4048-b6fc-1ff46c7672b9" />
-When new segments are added - 
-<img width="1897" height="840" alt="image" src="https://github.com/user-attachments/assets/1c862271-5a36-460f-9e20-97300e828dd2" />
+### The Cache Dashboard section
+<img width="1888" height="626" alt="Screenshot 2026-08-15 180435" src="https://github.com/user-attachments/assets/fe740ee4-f435-4164-acd3-83138903ff95" />
 
 
-<img width="1895" height="748" alt="image" src="https://github.com/user-attachments/assets/475d2f68-ec0b-4dbe-9535-c5d33b0e75a7" />
+### The Analytics section
+<img width="1881" height="858" alt="Screenshot 2026-08-15 180510" src="https://github.com/user-attachments/assets/22957ae8-2144-4669-971a-b015a1e12a34" />
+
+
+### The Storage Dashboard 
+<img width="1857" height="852" alt="Screenshot 2026-08-15 180548" src="https://github.com/user-attachments/assets/79d19044-2262-4031-854a-5c7e889abc44" />
+
+
+### The Video Library includes all videos of Origin Folder. 
+<img width="1475" height="867" alt="Screenshot 2026-08-15 180623" src="https://github.com/user-attachments/assets/5a44e4dd-8c67-47cb-bf9d-7cbe5ffcd816" />
+
+
+## Shravani 
