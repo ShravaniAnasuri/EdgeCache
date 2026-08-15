@@ -1,3 +1,29 @@
+## Tech Stack
+
+### Frontend
+- React.js
+- React Router
+- Axios
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+- Multer
+
+### Video & Streaming
+- FFmpeg
+- HLS
+- HLS.js
+
+### Caching
+- File System based caching
+- LRU Cache
+
+### Tools
+- Git
+- GitHub
+
 <img width="1891" height="867" alt="image" src="https://github.com/user-attachments/assets/fcc0a8a1-ef24-4235-aae8-b5105fed9a9a" />
 
 <img width="1897" height="867" alt="image" src="https://github.com/user-attachments/assets/d1309fb3-e779-4466-82a5-77eebee91330" />
