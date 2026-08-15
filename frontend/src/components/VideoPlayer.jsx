@@ -41,7 +41,7 @@ function VideoPlayer({ video }) {
 
 
     const videoUrl =
-        `http://localhost:5000/api/video/${videoName}/playlist.m3u8`;
+        `${import.meta.env.VITE_API_URL}/video/${videoName}/playlist.m3u8`;
 
 
     useEffect(() => {
