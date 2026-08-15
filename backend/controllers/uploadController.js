@@ -19,8 +19,9 @@ exports.uploadVideo = async (req, res) => {
 
         // Move uploaded file into video folder
         const newVideoPath = path.join(videoFolder, uploadedFile.originalname);
-
-        fs.renameSync(uploadedFile.path, newVideoPath);
+        
+        fs.copyFileSync(uploadedFile.path, newVideoPath);
+        fs.unlinkSync(uploadedFile.path);
 
         // Convert video to HLS
         await convertToHLS(newVideoPath, videoFolder);

@@ -76,7 +76,7 @@ function CacheGraphs() {
             }
         ]
     };
-    console.log(stats);
+
     return (
 
         <div className="analytics-card">
@@ -92,6 +92,7 @@ function CacheGraphs() {
                 <div
                     style={{
                         width: "700px",
+                        height: "320px",
                         margin: "0 auto"
                     }}
                 >
@@ -101,6 +102,7 @@ function CacheGraphs() {
                         redraw={true}
                         options={{
                             responsive: true,
+                            maintainAspectRatio: false,
                             animation: false
                         }}
                     />

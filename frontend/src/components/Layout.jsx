@@ -3,9 +3,17 @@ import Navbar from "./Navbar";
 
 import { Outlet } from "react-router-dom";
 
+import { useVideo } from "../context/VideoContext";
+
+import VideoPlayer from "./VideoPlayer";
+
 import "../styles/Layout.css";
 
 function Layout() {
+
+    const {
+        selectedVideo
+    } = useVideo();
 
     return (
 
@@ -22,6 +30,18 @@ function Layout() {
                     <Outlet />
 
                 </div>
+
+                {selectedVideo && (
+
+                    <div className="persistent-player">
+
+                        <VideoPlayer
+                            video={selectedVideo}
+                        />
+
+                    </div>
+
+                )}
 
             </div>
 

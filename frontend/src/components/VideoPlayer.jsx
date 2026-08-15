@@ -1,92 +1,141 @@
 import { useEffect, useRef } from "react";
-import Hls from "hls.js";
+
+import { useVideo } from "../context/VideoContext";
+
 import "../styles/Player.css";
+
 
 function VideoPlayer({ video }) {
 
     const videoRef = useRef(null);
 
-    useEffect(() => {
+    const {
+        currentTime,
+        setCurrentTime
+    } = useVideo();
 
-        if (!video) return;
 
-        const videoElement = videoRef.current;
+    const getVideoName = () => {
 
-        const videoUrl = `http://localhost:5000/api/video/${video}/playlist.m3u8`;
+        if (typeof video === "string") {
 
-        console.log("Video selected:", video);
-        console.log(videoUrl);
-
-        if (Hls.isSupported()) {
-
-            const hls = new Hls({
-
-                maxBufferLength: 5,
-                maxMaxBufferLength: 10,
-                backBufferLength: 5,
-                maxBufferSize: 10 * 1000 * 1000
-
-            });
-
-            hls.loadSource(videoUrl);
-
-            hls.attachMedia(videoElement);
-
-            hls.on(Hls.Events.MANIFEST_PARSED, () => {
-
-                videoElement.play();
-
-            });
-
-            return () => {
-
-                hls.destroy();
-
-            };
-
-        } else if (videoElement.canPlayType("application/vnd.apple.mpegurl")) {
-
-            videoElement.src = videoUrl;
-
-            videoElement.addEventListener("loadedmetadata", () => {
-
-                videoElement.play();
-
-            });
+            return video;
 
         }
 
-    }, [video]);
+        return (
+            video?.name ||
+            video?.videoName ||
+            video?.filename ||
+            video?.fileName ||
+            video?.title ||
+            video?.video ||
+            video?.id ||
+            ""
+        );
+
+    };
+
+
+    const videoName = getVideoName();
+
+
+    const videoUrl =
+        `http://localhost:5000/api/video/${videoName}/playlist.m3u8`;
+
+
+    useEffect(() => {
+
+        const player = videoRef.current;
+
+        if (!player) {
+
+            return;
+
+        }
+
+
+        const restorePosition = () => {
+
+            if (currentTime > 0) {
+
+                player.currentTime = currentTime;
+
+            }
+
+        };
+
+
+        player.addEventListener(
+            "loadedmetadata",
+            restorePosition
+        );
+
+
+        return () => {
+
+            player.removeEventListener(
+                "loadedmetadata",
+                restorePosition
+            );
+
+        };
+
+    }, [videoName]);
+
+
+    const handleTimeUpdate = () => {
+
+        const player = videoRef.current;
+
+        if (!player) {
+
+            return;
+
+        }
+
+        setCurrentTime(player.currentTime);
+
+    };
+
 
     return (
 
         <div className="player-card">
-        
+
             <div className="player-title">
-        
+
                 Now Playing
-        
+
             </div>
-        
+
+
             <div className="player-name">
-        
-                🎬 {video}
-        
+
+                {videoName}
+
             </div>
-        
+
+
             <video
-    
+
                 ref={videoRef}
-        
-                controls
-        
+
                 className="video-player"
-        
+
+                controls
+
+                onTimeUpdate={handleTimeUpdate}
+
+                src={videoUrl}
+
             />
-    
+
         </div>
 
     );
+
 }
+
 
 export default VideoPlayer;

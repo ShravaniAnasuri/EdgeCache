@@ -3,26 +3,12 @@ const fs = require("fs");
 
 const { getSegment } = require("../services/cacheService");
 
-const {
-    recordHit,
-    recordMiss
-} = require("../services/statsService");
 
 exports.streamSegment = (req, res) => { // Controller function to handle streaming of video segments
     try {
         const { video, segment } = req.params;
 
         const result = getSegment(video, segment);
-
-        if (result.hit) {
-
-            recordHit();
-
-        } else {
-        
-            recordMiss();
-        
-        }
 
         res.sendFile(result.file);
 

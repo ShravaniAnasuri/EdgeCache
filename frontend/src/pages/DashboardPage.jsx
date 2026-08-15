@@ -6,9 +6,11 @@ import DashboardCards from "../components/DashboardCards";
 import CacheDashboard from "../components/CacheDashboard";
 import CacheGraphs from "../components/CacheGraphs";
 import StorageDashboard from "../components/StorageDashboard";
-import VideoPlayer from "../components/VideoPlayer";
 import "../styles/Page.css";
-import "../styles/Page.css";
+
+import { useVideo } from "../context/VideoContext";
+
+
 function DashboardPage() {
 
     const [stats, setStats] = useState({
@@ -23,9 +25,8 @@ function DashboardPage() {
 
     const [serverData, setServerData] = useState(null);
 
-    const [videos, setVideos] = useState([]);
+    const { selectedVideo } = useVideo();
 
-    const [selectedVideo, setSelectedVideo] = useState(null);
 
     useEffect(() => {
 
@@ -47,47 +48,31 @@ function DashboardPage() {
 
         };
 
-        const fetchVideos = async () => {
-
-            try {
-
-                const response = await api.get("/upload/videos");
-
-                setVideos(response.data);
-
-                if (response.data.length > 0) {
-
-                    setSelectedVideo(response.data[0]);
-
-                }
-
-            }
-
-            catch (error) {
-
-                console.log(error);
-
-            }
-
-        };
-
         fetchHealth();
 
-        fetchVideos();
-
     }, []);
+
 
     return (
 
         <>
+
             <h1 className="page-title">
 
                 Cache Dashboard
 
             </h1>
-            <CacheDashboard onStats={setStats} />
+
+
+            <CacheDashboard
+
+                onStats={setStats}
+
+            />
+
 
             <br />
+
 
             <DashboardCards
 
@@ -97,34 +82,25 @@ function DashboardPage() {
 
             />
 
+
             <br />
+
 
             <CacheGraphs />
 
+
             <br />
+
 
             <StorageDashboard />
 
+
             <br />
-
-            {
-
-                selectedVideo && (
-
-                    <VideoPlayer
-
-                        video={selectedVideo}
-
-                    />
-
-                )
-
-            }
-
         </>
 
     );
 
 }
+
 
 export default DashboardPage;

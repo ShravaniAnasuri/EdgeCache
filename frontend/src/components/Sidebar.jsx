@@ -65,20 +65,6 @@ function Sidebar() {
 
                 </NavLink>
 
-                <NavLink
-                    to="/status"
-                    className="nav-link"
-                >
-                    <FaServer />
-
-                    <span>
-
-                        Status
-
-                    </span>
-
-                </NavLink>
-
             </nav>
 
         </div>

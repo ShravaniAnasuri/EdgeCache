@@ -14,31 +14,6 @@ function Navbar() {
 
             </div>
 
-            <div className="navbar-search">
-
-                <FaSearch />
-
-                <input
-                    type="text"
-                    placeholder="Search videos..."
-                />
-
-            </div>
-
-            <div className="navbar-right">
-
-                <div className="server-status">
-
-                    🟢 Server Running
-
-                </div>
-
-                <FaBell className="nav-icon" />
-
-                <FaUserCircle className="nav-icon avatar" />
-
-            </div>
-
         </div>
 
     );

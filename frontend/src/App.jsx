@@ -18,40 +18,41 @@ import LibraryPage from "./pages/LibraryPage";
 
 import StatusPage from "./pages/StatusPage";
 
+import { VideoProvider } from "./context/VideoContext";
+
 function App() {
 
     return (
 
         <BrowserRouter>
 
-            <Routes>
+            <VideoProvider>
+                <Routes>
+                    <Route element={<Layout />}>
 
-                <Route element={<Layout />}>
+                        <Route
+                            path="/"
+                            element={<UploadPage />}
+                        />
 
-                    <Route
-                        path="/"
-                        element={<UploadPage />}
-                    />
+                        <Route
+                            path="/dashboard"
+                            element={<DashboardPage />}
+                        />
 
-                    <Route
-                        path="/dashboard"
-                        element={<DashboardPage />}
-                    />
+                        <Route
+                            path="/library"
+                            element={<LibraryPage />}
+                        />
 
-                    <Route
-                        path="/library"
-                        element={<LibraryPage />}
-                    />
+                        <Route
+                            path="/status"
+                            element={<StatusPage />}
+                        />
 
-                    <Route
-                        path="/status"
-                        element={<StatusPage />}
-                    />
-
-                </Route>
-
-            </Routes>
-
+                    </Route>
+                </Routes>
+            </VideoProvider>
         </BrowserRouter>
 
     );
