@@ -1,4 +1,5 @@
-# **Tech Stack**
+# ****Edge = server, Cache = temporary storage.****
+## **Tech Stack**
 
 ### Frontend
 - React.js
